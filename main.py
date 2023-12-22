@@ -5,14 +5,6 @@ import os
 import datetime as dt
 import pandas as pd
 from openpyxl import *
-# import tensorflow as tf
-
-# # # GPU varsa, TensorFlow otomatik olarak GPU'yu kullanacaktır.
-# if tf.test.is_gpu_available():
-#      print("GPU is available.")
-# else:
-#   print("GPU is NOT available.")
-
 
 Path = '/Users/suedazehra/Desktop/projects/Attendance-with-face-recognition/Images'
 images = []
