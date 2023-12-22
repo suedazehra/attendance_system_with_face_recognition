@@ -13,7 +13,6 @@ imgList = os.listdir(Path)
 
 # Numara bilgilerini içeren bir sözlük
 numbers_dict = {
-    'SUEDA ZEHRA ERGUL': '183311014',
     'BRITNEY SPEARS': '20973384',
     'ANDY SAMBERG': '210239238',
     'ELON MUSK': '928723246',
