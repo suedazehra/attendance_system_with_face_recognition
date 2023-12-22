@@ -6,7 +6,7 @@ import datetime as dt
 import pandas as pd
 from openpyxl import *
 
-Path = '/Users/suedazehra/Desktop/projects/Attendance-with-face-recognition/Images'
+Path = '/Users/suedazehra/Desktop/projects/attendance_system_with_face_recognition/Images'
 images = []
 classNames = []
 imgList = os.listdir(Path)
@@ -17,7 +17,7 @@ numbers_dict = {
     'ANDY SAMBERG': '210239238',
     'ELON MUSK': '928723246',
     'BILL GATES': '2032934432'
-    # Diğer kişileri buraya ekleyin
+
 }
 
 for img in imgList:
@@ -36,12 +36,12 @@ def FindEncoding(images):
     return encodings
 
 def MarkAttendance(name):
-    file_path = '/Users/suedazehra/Desktop/projects/Attendance-with-face-recognition/Attendance.xlsx'
+    file_path = '/Users/suedazehra/Desktop/projects/attendance_system_with_face_recognition/Attendance.xlsx'
     date = dt.date.today()
     time_now = dt.datetime.now().strftime('%H:%M:%S')
 
     # Kişinin adına göre numarasını al
-    number = numbers_dict.get(name, 'Bilgi Yok')
+    number = numbers_dict.get(name, 'No Information')
 
     if not os.path.isfile(file_path):
         # Dosya yoksa yeni bir Excel dosyası oluştur
@@ -81,7 +81,7 @@ while True:
             faces = face_recognition.face_locations(imageS)
             curEncodings = face_recognition.face_encodings(imageS, faces)
 
-            # encodeKnownList = FindEncoding(images)
+            
 
             for encodeFace, FaceLoc in zip(curEncodings, faces):
                 matches = face_recognition.compare_faces(encodeKnownList, encodeFace)
